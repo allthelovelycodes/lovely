@@ -1,0 +1,239 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--heading-font);
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-weight: 1200;
+}
+
+body {
+  font-family: 'Lucida Console', Monaco, monospace;
+  padding: 0; margin: 0;
+  letter-spacing; 2px;
+  text-decoration: none;
+  background-color: var(--secondary-color);
+  overflow-x: hidden;
+/*   to hide the scrollbar */
+  -ms-overflow-style: none;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--main-color); 
+  background-color: inherit;
+  transition: 1s;
+}
+a:hover {
+  color: var(--secondary-color); 
+  transition: 1s;
+} 
+
+.description a:hover, .tag-box a:hover {
+  background-color: var(--main-color);
+}
+#page-name {
+  margin: 0 10vw;
+}
+
+/* edit the header */
+header {
+  margin: 10vh;
+}
+/* edit the header image */
+header img {
+  max-width: 300px;
+  height: 375px;
+  -webkit-filter: grayscale(70%);
+  filter: grayscale(70%);
+  float: left; 
+}
+
+/* edit the color behind the image */
+header::before {
+  position: absolute;
+  content: ''; 
+  width: 300px; height: 375px;
+  background-color: var(--main-color);
+  transform: translateX(-50px) translateY(-50px); 
+  margin: 5vh;
+}
+
+/* edit the header title (blog title) */
+header h1 {
+  font-size: var(--title-size);
+  background-color: inherit;
+  padding: 50px 0 0 350px ;
+}
+
+/* edit the navlinks */
+header .navlinks {
+  list-style-type: none;
+  position: absolute; 
+  transform: translateX(-115px) translateY(-135px); 
+  border-radius: 5%; 
+  text-align: right;
+}
+header .navlinks span {
+  font-size: var(--heading-size); 
+  color: var(--secondary-color); 
+  background-color: var(--main-color); 
+  padding: 10px;
+  margin: 5px;
+  border: 1px solid transparent;
+}
+header .navlinks span:hover {
+  color: var(--main-color); 
+  background-color: transparent;
+  border: 1px solid var(--main-color);
+  margin: 5px;
+  padding: 10px;
+  transition: 1s;
+}
+header .description, header p {
+  white-space: pre-wrap;
+  padding-left: 375px;
+  text-align: left;
+  font-size: var(--text-size); 
+  letter-spacing: 1px;
+  font-style: italic;
+}
+
+
+/* to edit the filters */
+.filter h1 {
+  font-size: var(--heading-size);
+  text-align: right;
+}
+.filter a {
+  text-align: right;
+  text-transform: uppercase;
+  line-height: 25px;
+  display: block;
+}
+.filter a.active {
+  color: black;
+}
+
+/* this is the hover effects  */
+.filter a:before {
+  content: '';
+  position: absolute;
+  width: 100%; 
+  height: 20px;
+  margin-left: -50px;
+  background: var(--main-color); 
+  z-index: -1;
+  transform: scaleX(0); 
+  transform-origin: center; 
+  transition: transform .5s;
+}
+.filter a:hover:before {
+  transform: scaleX(1); 
+}
+
+/* to edit the tag boxes */
+.boxes {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px 10px;
+}
+
+.boxes .tag-box {
+  width: 29%;
+  border: 2px solid #333;
+  margin: 40px 2% 20px 1%;
+  font-size: var(--main-size);
+  height: 290px;
+  overflow: scroll;
+  -ms-overflow-style: none;
+}
+.boxes .tag-box::-webkit-scrollbar {
+    display: none;
+}
+.boxes .tag-box a {
+  display: block;
+  white-space: prewrap;
+  padding: 5px 10px;
+}
+
+.boxes .tag-box a:nth-last-of-type(1) {
+  margin-bottom: 30px;
+}
+.boxes .tag-box a:hover {
+  padding: 5px 25px;
+}
+.boxes .tag-box h1, .boxes .tag-box h1 > a {
+  text-align: center;
+  font-size: var(--heading-size);
+} 
+.boxes .tag-box h2, .boxes .tag-box h2 > a {
+  text-align: left;
+    font-size: calc( var(--heading-size) - 3px);
+  padding: 5px 10px;
+}
+
+.boxes .tag-box:nth-child(odd) a, .boxes .tag-box:nth-child(odd) h1 {
+  color: var(--secondary-color);
+}
+
+.boxes .tag-box:nth-child(odd) a:hover {
+  color: var(--main-color); 
+  background-color: var(--secondary-color);
+}
+/* to put a background behind the odd tagboxes */
+.boxes .tag-box:nth-child(odd):before {
+  position: absolute;
+  content: ''; 
+  width: 23%; 
+  height: calc( var(--tag-box-size) + 10px);
+  background-color: var(--main-color);
+  transform: translateX(-15px) translateY(-25px); 
+  z-index: -1;
+}
+/* for the tagbox animations */
+.is-animated {
+  animation: .6s zoom-in;
+}
+@keyframes zoom-in {
+  0% {
+   transform: scale(.1);
+  } 
+  100% {
+    transform: none;
+  }
+}
+
+/* styling for the tooltips */
+.tippy-tooltip.custom-theme {
+  background-color: var(--tooltip-background);
+  color: black;
+  text-align: center;
+  font-family: var(--heading-font);
+  font-variant: small-caps;
+  font-weight: 500;
+}
+.tippy-tooltip.custom-theme .tippy-svg-arrow {
+  fill: var(--tooltip-background);
+}
+
+/* style for the custom highlight color */
+::selection {
+  background: var(--selection-color);
+  color: var(--font-color);
+}
+::-moz-selection {
+  background: var(--selection-color);
+  color: var(--font-color);
+}
+::-webkit-selection {
+  background: var(--selection-color);
+  color: var(--font-color);
+}
