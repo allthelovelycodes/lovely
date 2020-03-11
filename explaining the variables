@@ -1,0 +1,70 @@
+The variables directly correspond with things in the exertnal css. 
+They are the things you can edit, in the <style>
+Last updated: March 11 2020
+
+  /*   color palette - these are the main colors that are used */
+  --main-color: #ccbfaf; 
+      - in the preview, this is the pink
+  --secondary-color: #ececee;
+      - this is the gray, and is the background color
+  --accent-color: #aaa;
+      - this is the color of the headings
+  --hover-color: var(--main-color);
+      - when you hover over the links, it will be this color. 
+        (currently set to the same as the main color) 
+  --tag-border-color: black;
+      - the border around the seperate tag boxes
+  
+  /* the sizing */
+  --title-size: 20px;
+      - the title is what appears over the description 
+  --heading-size: 15px;
+      - 
+  --font-size: 11px;
+  --tag-box-size: 290px;
+  
+  /*   main fonts */
+  --heading-font: 'Lucida Console', Monaco, monospace;
+  --body-font: 'Source Sans Pro', calibri, sans-serif;
+      - the preview body font is the same as the heading font. 
+        I just found the body font here easier to read. 
+  
+  /*   further styling */
+  --heading-style: uppercase;
+      - can change to lowercase, or lowercaps
+  --description-align: left;
+      - other options are: right, center, justify
+  --desciption-style: italic;
+      - what makes it italic. to undo, replace with "normal"
+  --filter-align: right;
+      - what side the filters align to. options are the same as above.
+  
+
+  /* to edit the scrollbar */
+  --scrollbar-style: none;
+      - the scrollbar is currently hidden. 
+        to show it, replace with "show". 
+  --tag-scrollbar-style: none;
+      - the scrollbar for the tagboxes.
+        if you have more content, the scrollbar will still work, but it'll be hidden;
+        to show it, replace with "show". 
+  --scrollbar-width: 7px;
+      - the width of the scrollbar. the background will automaically be the same width
+  --scrollbar-background: var(--secondary-color);
+      - the color behind the scrollbar
+  --scrollbar-color: var(--main-color);
+      - the color of the scollbar itself
+  --scroll-hover-color: var(--accent-color);
+      - the color of the scrollbar when you hover over it
+  
+  /*   tooltip background ( the tooltip is what appears if <a href="#" title="like this">something</a> has a title ) */
+  --tooltip-background: var(--main-color);
+      - the color of the background
+  --tooltip-color: black;
+      - the color of the text. it is also the color of the title
+
+  /*   style for the higlight test color */
+  --selection-color: var(--main-color);
+      - the color that highlights things
+  --font-color: var(--secondary-color);
+      - the color of the text when its highlighted
