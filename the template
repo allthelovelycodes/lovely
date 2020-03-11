@@ -85,7 +85,7 @@
 </head>
 
 <body>
-  <div id="page-name">    
+  <div id="lovely">    
     <header>
     <img src="https://data.whicdn.com/images/329388305/original.jpg" class="avatar" title="image size: 300px x 375px"/>
     
@@ -154,7 +154,7 @@
     <a href="allthelovelycodes.tumblr.com/" rel="_blank" class="cred">
       <i class="fas fa-fan fa-spin" title="credit"></i>
     </a>
-</div><!-- end of page-name -->
+</div><!-- end of lovely -->
 
 </body>
 <!------- filter scripts -------->
