@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <!--  Meta  -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://codepen.io/allthelovelycodes/pen/LYVQPmv.css"/>
+  <title>{Title}</title>
+        <link rel="shortcut icon" href="{Favicon}">
+        <link rel="alternate" type="application/rss+xml" href="{RSS}">
+        {block:Description}
+            <meta name="description" content="{MetaDescription}" />
+        {/block:Description}
+
+  <!--  Styles  -->
+  <!-- fontawesome icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+  <!-- honeybee fonts -->
+  <link href="//dl.dropbox.com/s/vpi3f9s7nhpe7v7/honeybee.css" rel="stylesheet">
+
+  <!-- custom tooltips script --->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+  <!--   popup menu script -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+  <!--   custom tooltips sctipt -->
+    <script src="https://unpkg.com/popper.js@1"></script>
+    <script src="https://unpkg.com/tippy.js@5/dist/tippy-bundle.iife.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/tippy.js@5/dist/svg-arrow.css" />
+    
+<!--style - all the things you can edit-->
+<style>
+/* the are your variables. 
+    for further help or to know what the variables mean, go here: 
+    https://github.com/allthelovelycodes/lovely/blob/master/explaining%20the%20variables 
+    */
+ :root {
+  /*   color palette */
+  --main-color: #ccbfaf;
+  --secondary-color: #ececee;
+  --accent-color: #aaa;
+  --hover-color: var(--main-color);
+  --tag-border-color: black;
+  
+/*   the sizing */
+  --title-size: 20px;
+  --heading-size: 15px;
+  --font-size: 11px;
+  --tag-box-size: 290px;
+  
+  /*   main fonts */
+  --heading-font: 'Lucida Console', Monaco, monospace;
+  --body-font: 'Source Sans Pro', calibri, sans-serif;
+  
+/*   further styling */
+  --heading-style: uppercase;
+  --description-align: left;
+  --desciption-style: italic;
+  --filter-align: right;
+  
+  /* editing the icons */
+  --icon-size: 30px;
+  --icon-color: var(--main-color);
+
+  /* to edit the scrollbar */
+  --scrollbar-style: none;
+  --tag-scrollbar-style: none;
+  --scrollbar-width: 7px;
+  --scrollbar-background: var(--secondary-color);
+  --scrollbar-color: var(--main-color);
+  --scroll-hover-color: var(--accent-color); 
+  
+  /*   tooltip background */
+  --tooltip-background: var(--main-color);
+  --tooltip-color: black;
+
+  /*   style for the higlight test color */
+  --selection-color: var(--main-color);
+  --font-color: var(--secondary-color);
+}
+</style>
+</head>
+
+<body>
+  <div id="page-name">    
+    <header>
+    <img src="https://data.whicdn.com/images/329388305/original.jpg" class="avatar" title="image size: 300px x 375px"/>
+    
+    <!-- these are your nav links -->
+    <ul class="navlinks">
+      <li><a href="{BlogURL}" title="return to main blog"><span class="th th-chevron-left"></span></a></li>
+      {block:AskEnabled}
+      <li><a href="{BlogURL}ask" title="{AskLabel}"><span class="th th-chat-bubbles"></span></a></li>
+        {/block:AskEnabled}
+        {block:SubmissionsEnabled} 
+      <li><a href="{BlogURL}submit" title="{SubmitLabel}"><span class="th th-bubble-heart"></span></a></li>
+        {/block:SubmissionsEnabled}
+      <li><a href="{BlogURL}archive" title="go to archive"><span class="th th-folder-2"></span></a></li>
+        
+        {block:HasPages} 
+        {block:Pages} 
+      <li><a href="{URL}" title="{Label}"><span class="th th-moon"></span></a></li>
+      {/block:Pages}
+      {/block:HasPages}
+    </ul>
+    <!--end of the navlinks-->
+    
+    <h1>{Title}</h1>
+    
+<!--     this is your description. -->
+    <p class="description">
+        Here is all the tags I've used before. Sort through at your leasiure. Last updated: March 11 2019. <small>(The nav links may be off in the tumblr editor, but should show up fine in the normal webpage. Feel free to <a href="allthelovelycodes.tumblr.com/ask">contact me</a> if the problem persists. For further explination of the variables, go <a href="https://github.com/allthelovelycodes/lovely/blob/master/explaining%20the%20variables" target="_blank">here</a>.) </small>
+    </p>
+
+    </header><!-- end of header -->
+
+    
+<!--   the filters -->
+    <div id="sidebar">
+    <div id="sort">
+      <ul id="filters" class="option-set clearfix" data-option-key="filter">
+
+        <li><a href="#filter" data-option-filter=".tags">refresh</a></li>
+        <li><a href="#filter" data-option-filter=".tag1">tag 1</a></li>
+        <li><a href="#filter" data-option-filter=".tag2">tag 2</a></li>
+        <li><a href="#filter" data-option-filter=".tag3">tag 3</a></li>
+<!-- to add another filter
+<li><a href="#filter" data-option-filter=".FILTERTAG">FILTERNAME</a></li>
+-->
+      </ul>
+      </div><!-- end of sort -->
+      </div><!-- end of the sidebar -->
+<!-- end of the filters -->
+    
+    <div id="container" class="clearfix">
+
+    <!---- things go here ----->
+      <div id="tag-box" class="tags ">
+            <h1>your content title</h1>
+            <a href="/tagged/content">here is your content!</a>
+      </div><!-- end of one tag box -->
+    
+          <!-- template for a new tag box: 
+          <div id="tag-box" class="tags ">
+                here is your content!
+          </div><!-- end of one tag box -->
+          
+  </div><!-- end of container-->
+  
+    <!--   the credit - please don't touch! -->
+    <a href="allthelovelycodes.tumblr.com/" rel="_blank" class="cred">
+      <i class="fas fa-fan fa-spin" title="credit"></i>
+    </a>
+</div><!-- end of page-name -->
+
+</body>
+<!------- filter scripts -------->
+<script src="http://static.tumblr.com/fuu6t9w/kh8ml0pl9/jquery-1.7.1.min.js"></script>
+<script src="http://static.tumblr.com/fuu6t9w/eubml0pm0/jquery.isotope.min.js"></script>
+<script>
+  $(function() {
+    var $container = $('#container');
+    $container.isotope({
+      itemSelector: '.tags'
+    });
+    var $optionSets = $('#sort .option-set'),
+      $optionLinks = $optionSets.find('a');
+    $optionLinks.click(function() {
+      var $this = $(this);
+      // don't proceed if already selected
+      if ($this.hasClass('selected')) {
+        return false;
+      }
+      var $optionSet = $this.parents('.option-set');
+      $optionSet.find('.selected').removeClass('selected');
+      $this.addClass('selected');
+      // make option object dynamically, i.e. { filter: '.my-filter-class' }
+      var options = {},
+        key = $optionSet.attr('data-option-key'),
+        value = $this.attr('data-option-filter');
+      // parse 'false' as false boolean
+      value = value === 'false' ? false : value;
+      options[key] = value;
+      if (key === 'layoutMode' && typeof changeLayoutMode === 'function') {
+        // changes in layout modes need extra logic
+        changeLayoutMode($this, options)
+      } else {
+        // otherwise, apply new options
+        $container.isotope(options);
+      }
+      return false;
+    });
+  });
+  //the js for the tooltips should be the last thing or else it may not work
+tippy("img[title]", {
+  theme: "custom",
+  arrow: tippy.roundArrow,
+  zIndex: 9999999999,
+  maxWidth: 300,
+
+  content(reference) {
+    const title = reference.getAttribute("title");
+    reference.removeAttribute("title");
+    return title;
+  }
+});
+
+tippy("i[title]", {
+  theme: "custom",
+  arrow: tippy.roundArrow,
+  zIndex: 9999999999,
+  maxWidth: 300,
+
+  content(reference) {
+    const title = reference.getAttribute("title");
+    reference.removeAttribute("title");
+    return title;
+  }
+});
+
+tippy("a[title]", {
+  theme: "custom",
+  arrow: tippy.roundArrow,
+  zIndex: 9999999999,
+  maxWidth: 300,
+
+  content(reference) {
+    const title = reference.getAttribute("title");
+    reference.removeAttribute("title");
+    return title;
+  }
+});
+
+</script>
+
+<!-----end filter scripts------>
+
+</html>
