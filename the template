@@ -138,20 +138,24 @@
     <div id="container" class="clearfix">
 
     <!---- things go here ----->
-      <div id="tag-box" class="tags ">
+      <div id="tag-box" class="tags tag2 tag3">
             <h1>your content title</h1>
-            <a href="/tagged/content">here is your content!</a>
+              <a href="/tagged/content">here is your content!</a>
+            <h2>heading 2</h2>
+            <h3>heading 3</h3>
       </div><!-- end of one tag box -->
     
           <!-- template for a new tag box: 
           <div id="tag-box" class="tags ">
-                here is your content!
+          <h1>content heading</h1>
+                <a href="/tagged/">here is your content!</a>
+                <a href="/tagged/">here is your content!</a>
           </div><!-- end of one tag box -->
           
   </div><!-- end of container-->
   
     <!--   the credit - please don't touch! -->
-    <a href="allthelovelycodes.tumblr.com/" rel="_blank" class="cred">
+    <a href="https://allthelovelycodes.tumblr.com/" rel="_blank" class="cred">
       <i class="fas fa-fan fa-spin" title="credit"></i>
     </a>
 </div><!-- end of lovely -->
